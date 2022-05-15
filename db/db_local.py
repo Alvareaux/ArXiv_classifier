@@ -36,5 +36,5 @@ class LocalConnectDB(ConnectDB):
 
 
 if __name__ == '__main__':
-    config_path = 'E:\\Projects\\NeuralDiploma\\conf\\project.cfg'
+    config_path = r'E:\Projects\NeuralDiploma\conf\project.cfg'
     con = LocalConnectDB(config_path)
