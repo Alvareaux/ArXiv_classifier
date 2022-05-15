@@ -23,7 +23,7 @@ def get_path():
         return '..\\conf\\'
 
 
-class ConfigProject:
+class Config:
     def __init__(self, path=None):
         self.config = configparser.ConfigParser()
 
@@ -31,6 +31,11 @@ class ConfigProject:
             path = get_path()
 
         self.config.read(path)
+
+
+class ConfigProject(Config):
+    def __init__(self, path=None):
+        super().__init__(path)
 
         self.project_path, \
         self.db_type \
@@ -47,14 +52,9 @@ class ConfigProject:
         return project_path, db_type
 
 
-class ConfigDBLocal:
+class ConfigDBLocal(Config):
     def __init__(self, path=None):
-        self.config = configparser.ConfigParser()
-
-        if not path:
-            path = get_path()
-
-        self.config.read(path)
+        super().__init__(path)
 
         self.path, \
         self.local_db \
@@ -67,14 +67,9 @@ class ConfigDBLocal:
         return path, local_db
 
 
-class ConfigDBExternal:
+class ConfigDBExternal(Config):
     def __init__(self, path=None):
-        self.config = configparser.ConfigParser()
-
-        if not path:
-            path = get_path()
-
-        self.config.read(path)
+        super().__init__(path)
 
         self.hostname, \
         self.port, \
@@ -93,3 +88,20 @@ class ConfigDBExternal:
         charset = self.config['EXTERNAL']['charset']
 
         return hostname, port, dbname, user, password, charset
+
+
+class ConfigArxiv(Config):
+    def __init__(self, path=None):
+        super().__init__(path)
+
+        self.per_second_limit, \
+        self.connection_limit, \
+        self.bath_size, \
+            = self.init_config_base()
+
+    def init_config_base(self):
+        per_second_limit = self.config['ARXIV_API']['per_second_limit']
+        connection_limit = self.config['ARXIV_API']['connection_limit']
+        bath_size = self.config['ARXIV_API']['bath_size']
+
+        return per_second_limit, connection_limit, bath_size
