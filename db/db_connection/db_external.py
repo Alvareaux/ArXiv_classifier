@@ -5,10 +5,7 @@
 
 # Internal
 from addons.config import ConfigDBExternal
-
-from _db_connection import ConnectDB
-
-from db_base import Base
+from db.db_connection._db_connection import ConnectDB
 
 # External
 from sqlalchemy import create_engine
@@ -16,9 +13,8 @@ from sqlalchemy.orm import sessionmaker
 
 
 class ExternalConnectDB(ConnectDB):
-    def __init__(self, config_path=None):
-        Session = self.start_db(config_path)
-        self.session = Session()
+    def __init__(self, base, base_name, config_path=None):
+        super().__init__(base, config_path)
 
     def start_db(self, config_path):
         db_config = ConfigDBExternal(config_path)
@@ -30,7 +26,7 @@ class ExternalConnectDB(ConnectDB):
         charset = db_config.charset
 
         engine = create_engine(f'mysql+pymysql://{user}:{password}@{hostname}/{dbname}?charset={charset}')
-        Base.metadata.create_all(engine, checkfirst=True)
+        self.base.metadata.create_all(engine, checkfirst=True)
         session = sessionmaker(bind=engine)
 
         return session
