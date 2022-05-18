@@ -79,6 +79,7 @@ class ConfigDBExternal(Config):
         self.charset, \
             = self.init_config_base()
 
+
     def init_config_base(self):
         hostname = self.config['EXTERNAL']['hostname']
         port = self.config['EXTERNAL']['port']
@@ -94,14 +95,14 @@ class ConfigArxiv(Config):
     def __init__(self, path=None):
         super().__init__(path)
 
-        self.per_second_limit, \
-        self.connection_limit, \
         self.bath_size, \
+        self.delay_seconds, \
+        self.num_retries, \
             = self.init_config_base()
 
     def init_config_base(self):
-        per_second_limit = self.config['ARXIV_API']['per_second_limit']
-        connection_limit = self.config['ARXIV_API']['connection_limit']
-        bath_size = self.config['ARXIV_API']['bath_size']
+        bath_size = int(self.config['ARXIV_API']['bath_size'])
+        delay_seconds = int(self.config['ARXIV_API']['delay_seconds'])
+        num_retries = int(self.config['ARXIV_API']['num_retries'])
 
-        return per_second_limit, connection_limit, bath_size
+        return bath_size, delay_seconds, num_retries
