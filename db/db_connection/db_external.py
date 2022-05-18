@@ -14,7 +14,7 @@ from sqlalchemy.orm import sessionmaker
 
 class ExternalConnectDB(ConnectDB):
     def __init__(self, base, base_name, config_path=None):
-        super().__init__(base, config_path)
+        super().__init__(base, base_name, config_path)
 
     def start_db(self, config_path):
         db_config = ConfigDBExternal(config_path)

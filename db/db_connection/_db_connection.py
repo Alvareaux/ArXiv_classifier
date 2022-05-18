@@ -35,3 +35,5 @@ class ConnectDB:
         data_object = [vars(r) for r in result]
 
         return data_object
+
+
