@@ -27,7 +27,7 @@ class Convertor:
         """
         Extract data from database to dataframe
 
-        :param bulk: multiprocessing usage
+        :param queue: multiprocessing usage
         :param text_pipeline: function that applied to text
         :param save_path: path to dataframe pickle file
         :return:
@@ -35,8 +35,8 @@ class Convertor:
         data = self.get_data()
         data_dict = self.group_data(data)
 
-        text_data = self.preprocess_data(data_dict)
-        data_dict['text'] = text_data
+        # text_data = self.preprocess_data(data_dict)
+        # data_dict['text'] = text_data
 
         data_df = self.convert_to_df_encode(data_dict)
         self.save_to_file(data_df, save_path)
@@ -90,7 +90,8 @@ class Convertor:
 
         data_dict = {'entry_id': [],
                      'text': [],
-                     'categories': []}
+                     'categories': []
+                     }
 
         for row in data_list:
             data_dict['entry_id'].append(row['entry_id'])
@@ -112,12 +113,14 @@ class Convertor:
         for t in tqdm(zip(data_dict['entry_id'], data_dict['text'], data_dict['categories'])):
             entry_id = t[0]
             text = t[1]
-            categories = [0 for i in range(id_count)]
+            categories = t[2]
+
+            one_hot_categories = [0] * id_count
             for category in categories:
-                categories[category - 1] = 1
+                one_hot_categories[category - 1] = 1
 
             row = [entry_id, text]
-            row.extend(categories)
+            row.extend(one_hot_categories)
 
             rows.append(row)
 
