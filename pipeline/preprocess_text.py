@@ -25,6 +25,7 @@ class TextPreprocessor:
 
     def __init__(self):
         nltk.download('stopwords')
+        stanza.download('en')
 
         self.nlp = stanza.Pipeline(lang='en', processors='tokenize, lemma')
         self.english_stopwords = stopwords.words("english")
