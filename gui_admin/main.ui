@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>581</width>
+    <height>317</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabs">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>561</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_units">
+     <attribute name="title">
+      <string>Units</string>
+     </attribute>
+     <widget class="QGroupBox" name="units_monitor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>411</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Units monitor</string>
+      </property>
+      <widget class="QFrame" name="u1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u1_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u1_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u1_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u1_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u1_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u1_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 01</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u0">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u0_minus">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="u0_plus">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>41</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u2_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u2_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u2_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u2_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u2_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u2_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 02</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u3">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u3_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u3_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u3_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u3_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u3_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u3_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 03</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u4">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u4_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u4_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u4_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u4_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u4_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u4_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 04</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u5">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u5_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u5_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u5_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u5_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u5_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u5_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 05</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u6">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u6_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u6_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u6_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u6_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u6_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u6_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 06</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="u7">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>20</y>
+         <width>41</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="u7_pause">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="u7_ab">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="u7_reload">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u7_p_mem">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Memory usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 0);
+format: &quot;a&quot;}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="u7_p_cpu">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>21</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPU usage</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> QProgressBar::chunk {background-color: rgb(0, 170, 255);}</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="format">
+         <string>⠀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="u7_name">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>41</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Unit 07</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="units_settings">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>10</y>
+        <width>111</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Units settings</string>
+      </property>
+      <widget class="QFrame" name="user_display">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>91</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QRadioButton" name="ds_abs">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Absolute resource usage</string>
+        </property>
+        <property name="text">
+         <string>Absoulte</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ds_rel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Resource usage per unit limitaton</string>
+        </property>
+        <property name="text">
+         <string>Relative</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_type_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Usage display:</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_queues">
+     <attribute name="title">
+      <string>Queues</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>411</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Queue</string>
+      </property>
+      <widget class="PlotWidget" name="plot_widget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>391</width>
+         <height>201</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>10</y>
+        <width>111</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Units settings</string>
+      </property>
+      <widget class="QLabel" name="label_type">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Display:</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>91</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QRadioButton" name="rb_global">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Queue for bulk classification</string>
+        </property>
+        <property name="text">
+         <string>Global</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_personal">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Queue for personal classification</string>
+        </property>
+        <property name="text">
+         <string>Personal</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rb_command">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Queue for personal classification</string>
+        </property>
+        <property name="text">
+         <string>Command</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_log">
+     <attribute name="title">
+      <string>Log</string>
+     </attribute>
+     <widget class="QPlainTextEdit" name="plain_log">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>531</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>581</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>plot_widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
