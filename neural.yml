@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+
+  master:
+    image: alvareaux/diploma_neural_classifier
+    restart: always
+    volumes:
+    - type: bind
+      source: /neural_d/conf
+      target: /conf
+    - type: bind
+      source: /neural_d/data
+      target: /data
+    - type: bind
+      source: /root
+      target: /root
+    ports:
+    - "5672:5672"
+    - "80:80"
